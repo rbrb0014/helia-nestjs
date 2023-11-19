@@ -13,8 +13,7 @@ export class AppService {
   private stringHelia: Strings;
 
   async getHelia(): Promise<Helia> {
-    if (this.helia == null)
-      this.helia = await createHelia({ blockstore: new MemoryBlockstore() });
+    if (this.helia == null) this.helia = await createHelia();
     if (this.stringHelia == null) this.stringHelia = strings(this.helia);
 
     return this.helia;
